@@ -1,2 +1,2 @@
-# 3D-Clicker-Game
-Clicker game but in 3D!
+# FPS-Godot
+FPS game in Godot
