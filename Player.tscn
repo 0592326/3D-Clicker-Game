@@ -3893,16 +3893,16 @@ extents = Vector3( 1.5, 2, 1.5 )
 [sub_resource type="SphereMesh" id=23]
 
 [sub_resource type="StyleBoxFlat" id=24]
-bg_color = Color( 0, 0, 0, 1 )
+bg_color = Color( 0, 0, 0, 0.498039 )
 border_width_top = 15
 border_width_right = 20
-border_color = Color( 0, 1, 0.52549, 1 )
+border_color = Color( 0, 0.623529, 1, 1 )
 border_blend = true
-corner_radius_top_right = 250
-corner_detail = 1
+corner_radius_top_right = 100
+corner_detail = 20
 
 [sub_resource type="DynamicFont" id=25]
-size = 30
+size = 22
 outline_size = 1
 use_filter = true
 extra_spacing_bottom = 10
@@ -3910,17 +3910,18 @@ extra_spacing_char = 2
 font_data = ExtResource( 8 )
 
 [sub_resource type="StyleBoxFlat" id=26]
-bg_color = Color( 0, 0, 0, 1 )
+bg_color = Color( 0, 0, 0, 0.498039 )
 border_width_left = 20
 border_width_top = 15
-border_color = Color( 0, 1, 0.52549, 1 )
+border_color = Color( 0, 0.623529, 1, 1 )
 border_blend = true
-corner_radius_top_left = 250
-corner_detail = 1
+corner_radius_top_left = 100
+corner_detail = 20
 
 [sub_resource type="DynamicFont" id=27]
-size = 100
+size = 75
 outline_size = 1
+extra_spacing_char = 5
 font_data = ExtResource( 8 )
 
 [node name="Player" type="KinematicBody"]
@@ -4204,15 +4205,16 @@ transform = Transform( 1, 0, 0, 0, 0.983001, 0.1836, 0, -0.1836, 0.983001, 0, -0
 [node name="HUD" type="Control" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 1.1225
-margin_top = 1.1225
-margin_right = 1.12256
-margin_bottom = 1.1225
+margin_left = 1.21228
+margin_top = 1.21225
+margin_right = 1.21228
+margin_bottom = 1.21228
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Crosshair" type="Control" parent="HUD"]
+visible = false
 modulate = Color( 1, 1, 1, 0.705882 )
 anchor_left = 0.5
 anchor_top = 0.5
@@ -4234,9 +4236,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = 1.87659
-margin_top = 2.9231
-margin_right = 11.8766
-margin_bottom = 6.9231
+margin_top = 5.85486
+margin_right = 9.87659
+margin_bottom = 9.85486
 rect_rotation = 90.0
 rect_scale = Vector2( 0.996666, 0.996666 )
 texture = ExtResource( 7 )
@@ -4252,10 +4254,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 1.95355
-margin_top = -13.1584
-margin_right = 11.9536
-margin_bottom = -9.15845
+margin_left = 1.90692
+margin_top = -14.111
+margin_right = 9.90692
+margin_bottom = -10.111
 rect_rotation = 90.0
 rect_scale = Vector2( 0.996666, 0.996666 )
 texture = ExtResource( 7 )
@@ -4269,10 +4271,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 0.953247
-margin_top = 4.00031
-margin_right = 8.95325
-margin_bottom = 6.00031
+margin_left = 0.834106
+margin_top = 6.87891
+margin_right = 6.83411
+margin_bottom = 8.87891
 rect_rotation = 90.0
 rect_scale = Vector2( 0.996666, 0.996666 )
 texture = ExtResource( 7 )
@@ -4286,10 +4288,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 0.876282
-margin_top = -12.0425
-margin_right = 8.87628
-margin_bottom = -10.0425
+margin_left = 0.816711
+margin_top = -13.1141
+margin_right = 6.81671
+margin_bottom = -11.1141
 rect_rotation = 90.0
 rect_scale = Vector2( 0.996666, 0.996666 )
 texture = ExtResource( 7 )
@@ -4304,10 +4306,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -3.07983
-margin_top = -2.15955
-margin_right = 0.920166
-margin_bottom = 7.84045
+margin_left = -6.0647
+margin_top = -2.09357
+margin_right = -2.0647
+margin_bottom = 5.90643
 rect_rotation = 90.0
 rect_scale = Vector2( 0.996666, 0.996666 )
 texture = ExtResource( 7 )
@@ -4322,10 +4324,28 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 12.8478
+margin_left = 13.8004
 margin_top = -2.08258
-margin_right = 16.8478
-margin_bottom = 7.91742
+margin_right = 17.8004
+margin_bottom = 5.91742
+rect_rotation = 90.0
+rect_scale = Vector2( 0.996666, 0.996666 )
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left_IMG10" type="TextureRect" parent="HUD/Crosshair"]
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 1.86594
+margin_top = -2.13916
+margin_right = 5.86594
+margin_bottom = 1.86084
 rect_rotation = 90.0
 rect_scale = Vector2( 0.996666, 0.996666 )
 texture = ExtResource( 7 )
@@ -4339,10 +4359,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -4.00317
-margin_top = -1.08228
-margin_right = -2.00317
-margin_bottom = 6.91772
+margin_left = -7.04755
+margin_top = -1.14825
+margin_right = -5.04755
+margin_bottom = 4.85175
 rect_rotation = 90.0
 rect_scale = Vector2( 0.996666, 0.996666 )
 texture = ExtResource( 7 )
@@ -4356,10 +4376,111 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = 11.8365
+margin_left = 12.8487
 margin_top = -1.08228
-margin_right = 13.8365
-margin_bottom = 6.91772
+margin_right = 14.8487
+margin_bottom = 4.91772
+rect_rotation = 90.0
+rect_scale = Vector2( 0.996666, 0.996666 )
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left_IMG9" type="TextureRect" parent="HUD/Crosshair"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 0.91983
+margin_top = -1.18976
+margin_right = 2.91983
+margin_bottom = 0.810242
+rect_rotation = 90.0
+rect_scale = Vector2( 0.996666, 0.996666 )
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Crosshair2" type="Control" parent="HUD"]
+modulate = Color( 1, 1, 1, 0.705882 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -21.0
+margin_top = -21.0
+margin_right = 21.0
+margin_bottom = 21.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left_IMG10" type="TextureRect" parent="HUD/Crosshair2"]
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 1.80331
+margin_top = -7.21558
+margin_right = 15.8033
+margin_bottom = -3.21558
+rect_rotation = 90.0
+rect_scale = Vector2( 0.996666, 0.996666 )
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left_IMG12" type="TextureRect" parent="HUD/Crosshair2"]
+modulate = Color( 0, 0, 0, 1 )
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 6.81705
+margin_top = -2.1391
+margin_right = 10.817
+margin_bottom = 11.8609
+rect_rotation = 90.0
+rect_scale = Vector2( 0.996666, 0.996666 )
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left_IMG9" type="TextureRect" parent="HUD/Crosshair2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 0.794464
+margin_top = -6.20355
+margin_right = 12.7945
+margin_bottom = -4.20355
+rect_rotation = 90.0
+rect_scale = Vector2( 0.996666, 0.996666 )
+texture = ExtResource( 7 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left_IMG11" type="TextureRect" parent="HUD/Crosshair2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 5.80826
+margin_top = -1.31512
+margin_right = 7.80826
+margin_bottom = 10.6849
 rect_rotation = 90.0
 rect_scale = Vector2( 0.996666, 0.996666 )
 texture = ExtResource( 7 )
@@ -4369,8 +4490,9 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="HUD"]
-margin_top = 573.0
-margin_right = 363.0
+margin_left = -1.09416
+margin_top = 595.0
+margin_right = 298.906
 margin_bottom = 720.0
 custom_styles/panel = SubResource( 24 )
 __meta__ = {
@@ -4378,7 +4500,6 @@ __meta__ = {
 }
 
 [node name="Gun_label" type="Label" parent="HUD/Panel"]
-self_modulate = Color( 1, 1, 1, 0.705882 )
 margin_left = 10.0
 margin_top = 20.123
 margin_right = 380.0
@@ -4393,24 +4514,24 @@ __meta__ = {
 }
 
 [node name="Panel-Score" type="Panel" parent="HUD"]
-margin_left = 916.305
-margin_top = 573.0
-margin_right = 1279.31
-margin_bottom = 720.0
+margin_left = 979.0
+margin_top = 593.971
+margin_right = 1279.0
+margin_bottom = 718.971
 custom_styles/panel = SubResource( 26 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Score" type="Label" parent="HUD/Panel-Score"]
-self_modulate = Color( 1, 1, 1, 0.705882 )
-margin_left = 148.041
-margin_top = 35.9898
-margin_right = 518.041
-margin_bottom = 194.99
+margin_left = -23.9952
+margin_top = 35.2859
+margin_right = 346.005
+margin_bottom = 135.286
 custom_fonts/font = SubResource( 27 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "200"
+align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
