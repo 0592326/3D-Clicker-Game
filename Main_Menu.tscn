@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://assets/Titillium-Regular.otf" type="DynamicFontData" id=2]
 [ext_resource path="res://FPS_project_icon.png" type="Texture" id=3]
@@ -20,6 +20,7 @@ corner_detail = 20
 size = 80
 outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
 font_data = ExtResource( 2 )
 
 [sub_resource type="DynamicFont" id=3]
@@ -27,9 +28,15 @@ size = 32
 use_filter = true
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFont" id=4]
+size = 24
+font_data = ExtResource( 2 )
+
 [node name="Main_Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -1.05261
+margin_right = -1.05261
 script = ExtResource( 6 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -138,7 +145,6 @@ margin_right = 227.0
 margin_bottom = 77.0
 rect_scale = Vector2( 1.4, 1.4 )
 custom_fonts/font = SubResource( 3 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
 text = "Select a level"
@@ -185,6 +191,8 @@ margin_left = -73.9354
 margin_top = 274.884
 margin_right = 66.065
 margin_bottom = 414.884
+custom_fonts/font = SubResource( 4 )
+text = "Test"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -198,8 +206,10 @@ margin_left = -60.0
 margin_top = -60.0
 margin_right = 60.0
 margin_bottom = 60.0
-texture = ExtResource( 3 )
 expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button_Level_Space" type="Button" parent="Level_Select_Menu"]
 visible = false

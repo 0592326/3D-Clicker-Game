@@ -2,7 +2,7 @@ extends KinematicBody
 
 const GRAVITY = -100 # Player gravity
 var vel = Vector3()
-const MAX_SPEED = 25 # Player move speed
+const MAX_SPEED = 22.5 # Player move speed
 const JUMP_SPEED = 40 # Jump height/power
 const ACCEL = 10 # Time taken to reach max speed
 
