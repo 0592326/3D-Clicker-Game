@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=2]
+[gd_scene load_steps=42 format=2]
 
 [ext_resource path="res://assets/Colors.material" type="Material" id=1]
 [ext_resource path="res://assets/Emission.material" type="Material" id=2]
@@ -3893,36 +3893,42 @@ extents = Vector3( 1.5, 2, 1.5 )
 [sub_resource type="SphereMesh" id=23]
 
 [sub_resource type="StyleBoxFlat" id=24]
-bg_color = Color( 1, 0, 0, 0.196078 )
-border_width_top = 20
-border_width_right = 20
-border_color = Color( 1, 0, 0, 1 )
+bg_color = Color( 1, 0, 0, 0 )
+border_width_bottom = 150
+border_color = Color( 1, 0, 0, 0.392157 )
 border_blend = true
-corner_radius_top_right = 100
-corner_detail = 20
+corner_radius_bottom_right = 45
+corner_detail = 1
 
 [sub_resource type="DynamicFont" id=25]
 size = 22
-outline_size = 1
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 extra_spacing_bottom = 10
 extra_spacing_char = 2
 font_data = ExtResource( 8 )
 
-[sub_resource type="StyleBoxFlat" id=26]
-bg_color = Color( 1, 0, 0, 0.196078 )
-border_width_left = 20
-border_width_right = 20
-border_width_bottom = 20
-border_color = Color( 1, 0, 0, 1 )
+[sub_resource type="StyleBoxFlat" id=28]
+bg_color = Color( 1, 0, 0, 0 )
+border_width_bottom = 150
+border_color = Color( 1, 0, 0, 0.392157 )
 border_blend = true
-corner_radius_bottom_right = 60
-corner_radius_bottom_left = 60
-corner_detail = 20
+corner_radius_bottom_left = 45
+corner_detail = 1
+
+[sub_resource type="StyleBoxFlat" id=26]
+bg_color = Color( 1, 0, 0, 0 )
+border_width_bottom = 60
+border_color = Color( 1, 0, 0, 0.392157 )
+border_blend = true
+corner_radius_bottom_right = 30
+corner_detail = 1
 
 [sub_resource type="DynamicFont" id=27]
-size = 50
-outline_size = 1
+size = 35
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
 extra_spacing_char = 5
 font_data = ExtResource( 8 )
 
@@ -4146,7 +4152,7 @@ anims/Rifle_unequip = SubResource( 21 )
 script = ExtResource( 10 )
 
 [node name="Camera" type="Camera" parent="Rotation_Helper"]
-transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0, -0.307539, -0.0646362 )
+transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0, 0.04, -0.065 )
 current = true
 fov = 90.0
 near = 1.0
@@ -4492,9 +4498,9 @@ __meta__ = {
 }
 
 [node name="Panel" type="Panel" parent="HUD"]
-margin_left = -1.09416
-margin_top = 595.0
-margin_right = 298.906
+margin_left = -1.094
+margin_top = 620.0
+margin_right = 248.906
 margin_bottom = 720.0
 custom_styles/panel = SubResource( 24 )
 __meta__ = {
@@ -4503,33 +4509,55 @@ __meta__ = {
 
 [node name="Gun_label" type="Label" parent="HUD/Panel"]
 margin_left = 10.0
-margin_top = 20.123
+margin_top = 42.746
 margin_right = 380.0
-margin_bottom = 179.123
+margin_bottom = 201.746
 custom_fonts/font = SubResource( 25 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Health: 100
-Ammo: 000/000
-Sticky grenade: 2"
+text = "Health:   100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="HUD"]
+margin_left = 1030.0
+margin_top = 620.0
+margin_right = 1280.0
+margin_bottom = 720.0
+custom_styles/panel = SubResource( 28 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gun_label2" type="Label" parent="HUD/Panel2"]
+margin_left = -129.455
+margin_top = 10.8628
+margin_right = 240.545
+margin_bottom = 169.863
+custom_fonts/font = SubResource( 25 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Ammo:  000/000
+Sticky grenade:  2"
+align = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Panel-Score" type="Panel" parent="HUD"]
-margin_left = 515.0
-margin_top = -1.0
-margin_right = 765.0
-margin_bottom = 89.0
+margin_left = -1.0
+margin_top = 532.059
+margin_right = 199.0
+margin_bottom = 592.059
 custom_styles/panel = SubResource( 26 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Score" type="Label" parent="HUD/Panel-Score"]
-margin_left = 30.0
-margin_top = 15.892
-margin_right = 220.0
-margin_bottom = 75.892
+margin_left = -9.95132
+margin_top = 13.628
+margin_right = 190.049
+margin_bottom = 73.628
 custom_fonts/font = SubResource( 27 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "200"

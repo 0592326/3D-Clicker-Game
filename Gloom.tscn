@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://RigidBody_hit_test.gd" type="Script" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://Textures/crate_texture.jpg" type="Texture" id=12]
 [ext_resource path="res://Textures/box_texture.jpg" type="Texture" id=13]
 [ext_resource path="res://assets/Gamemode_Objects/Banner_Red.tscn" type="PackedScene" id=14]
+[ext_resource path="res://assets/Gamemode_Objects/Gamemode_Flag_Blue.tscn" type="PackedScene" id=15]
+[ext_resource path="res://assets/Gamemode_Objects/Gamemode_Flag_Red.tscn" type="PackedScene" id=16]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 80, 80 )
@@ -277,3 +279,17 @@ transform = Transform( 2.62268e-07, 0, -2, 0, 3, 0, 2, 0, 2.62268e-07, 118, 25, 
 
 [node name="Banner_Blue2" parent="Decoration Assets/Banners" instance=ExtResource( 7 )]
 transform = Transform( 2.62268e-07, 0, -2, 0, 3, 0, 2, 0, 2.62268e-07, 118, 25, 17.15 )
+
+[node name="Torches" type="Spatial" parent="Decoration Assets"]
+
+[node name="Gamemode_Flag_Red" parent="Decoration Assets/Torches" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117.5, 0, -8 )
+
+[node name="Gamemode_Flag_Red2" parent="Decoration Assets/Torches" instance=ExtResource( 16 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -117.5, 0, 8 )
+
+[node name="Gamemode_Flag_Blue" parent="Decoration Assets/Torches" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 117.5, 0, -8 )
+
+[node name="Gamemode_Flag_Blue2" parent="Decoration Assets/Torches" instance=ExtResource( 15 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 117.5, 0, 8 )

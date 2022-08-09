@@ -57,6 +57,7 @@ var changing_weapon_name = "UNARMED"
 var health = 100
 
 var UI_status_label
+var UI_status_label2
 
 var reloading_weapon = false # Checks to see if the player is currently trying to reload.
 
@@ -94,6 +95,7 @@ func _ready():
 	changing_weapon_name = "UNARMED"
 
 	UI_status_label = $HUD/Panel/Gun_label
+	UI_status_label2 = $HUD/Panel2/Gun_label2
 	flashlight = $Rotation_Helper/Flashlight
 
 	globals = get_node("/root/Globals")
@@ -442,13 +444,19 @@ func process_UI(delta):
 	# Text that appears on the HUD.
 	if current_weapon_name == "UNARMED" or current_weapon_name == "KNIFE":
 		# First line: Health, second line: Grenades
-		UI_status_label.text = "HEALTH: " + str(health) + \
-				"\n" + current_grenade + ": " + str(grenade_amounts[current_grenade])
+		UI_status_label.text = "HEALTH: " + str(health)
 	else:
 		var current_weapon = weapons[current_weapon_name]
 		# First line: Health, second line: weapon and ammo, third line: grenades
-		UI_status_label.text = "HEALTH: " + str(health) + \
-				"\nAMMO: " + str(current_weapon.ammo_in_weapon) + "/" + str(current_weapon.spare_ammo) + \
+		UI_status_label.text = "HEALTH: " + str(health)
+
+	if current_weapon_name == "UNARMED" or current_weapon_name == "KNIFE":
+		# First line: Health, second line: Grenades
+		UI_status_label2.text = current_grenade + ": " + str(grenade_amounts[current_grenade])
+	else:
+		var current_weapon = weapons[current_weapon_name]
+		# First line: Health, second line: weapon and ammo, third line: grenades
+		UI_status_label2.text = "AMMO: " + str(current_weapon.ammo_in_weapon) + "/" + str(current_weapon.spare_ammo) + \
 				"\n" + current_grenade + ": " + str(grenade_amounts[current_grenade])
 
 	# ----------------------------------
