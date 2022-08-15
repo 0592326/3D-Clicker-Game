@@ -3909,7 +3909,7 @@ extra_spacing_bottom = 10
 extra_spacing_char = 2
 font_data = ExtResource( 8 )
 
-[sub_resource type="StyleBoxFlat" id=28]
+[sub_resource type="StyleBoxFlat" id=26]
 bg_color = Color( 1, 0, 0, 0 )
 border_width_bottom = 150
 border_color = Color( 1, 0, 0, 0.392157 )
@@ -3917,7 +3917,7 @@ border_blend = true
 corner_radius_bottom_left = 45
 corner_detail = 1
 
-[sub_resource type="StyleBoxFlat" id=26]
+[sub_resource type="StyleBoxFlat" id=27]
 bg_color = Color( 1, 0, 0, 0 )
 border_width_bottom = 60
 border_color = Color( 1, 0, 0, 0.392157 )
@@ -3925,7 +3925,7 @@ border_blend = true
 corner_radius_bottom_right = 30
 corner_detail = 1
 
-[sub_resource type="DynamicFont" id=27]
+[sub_resource type="DynamicFont" id=28]
 size = 35
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -4524,7 +4524,7 @@ margin_left = 1030.0
 margin_top = 620.0
 margin_right = 1280.0
 margin_bottom = 720.0
-custom_styles/panel = SubResource( 28 )
+custom_styles/panel = SubResource( 26 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -4548,7 +4548,7 @@ margin_left = -1.0
 margin_top = 532.059
 margin_right = 199.0
 margin_bottom = 592.059
-custom_styles/panel = SubResource( 26 )
+custom_styles/panel = SubResource( 27 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -4558,7 +4558,7 @@ margin_left = -9.95132
 margin_top = 13.628
 margin_right = 190.049
 margin_bottom = 73.628
-custom_fonts/font = SubResource( 27 )
+custom_fonts/font = SubResource( 28 )
 custom_colors/font_color = Color( 1, 1, 1, 1 )
 text = "200"
 align = 1
