@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=2]
+[gd_scene load_steps=34 format=2]
 
 [ext_resource path="res://Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://RigidBody_hit_test.gd" type="Script" id=2]
@@ -16,7 +16,6 @@
 [ext_resource path="res://assets/Gamemode_Objects/Banner_Red.tscn" type="PackedScene" id=14]
 [ext_resource path="res://assets/Gamemode_Objects/Gamemode_Flag_Blue.tscn" type="PackedScene" id=15]
 [ext_resource path="res://assets/Gamemode_Objects/Gamemode_Flag_Red.tscn" type="PackedScene" id=16]
-[ext_resource path="res://Clickbutton.tscn" type="PackedScene" id=17]
 
 [sub_resource type="PlaneMesh" id=1]
 size = Vector2( 80, 80 )
@@ -43,7 +42,7 @@ uv2_scale = Vector3( 0, 0, 0 )
 
 [sub_resource type="SpatialMaterial" id=7]
 flags_transparent = true
-albedo_color = Color( 0.721569, 0.992157, 1, 0.0980392 )
+albedo_color = Color( 0.94902, 0.94902, 0.94902, 0.0980392 )
 
 [sub_resource type="CubeMesh" id=8]
 material = SubResource( 7 )
@@ -111,9 +110,6 @@ albedo_texture = ExtResource( 12 )
 uv1_scale = Vector3( 3, 2, 3 )
 
 [node name="Testing_Area" type="Spatial"]
-
-[node name="Clickbutton" parent="." instance=ExtResource( 17 )]
-transform = Transform( -1.31134e-07, 0, -3, 0, 3, 0, 3, 0, -1.31134e-07, 0, 14.3228, 0 )
 
 [node name="Spawn_Points" type="Spatial" parent="."]
 script = ExtResource( 9 )
@@ -183,7 +179,7 @@ transform = Transform( 1, 0, 0, 0, 1, 8.35187e-23, 0, 8.35187e-23, 1, 0, 0, 0 )
 shape = SubResource( 6 )
 
 [node name="Wall_5" type="MeshInstance" parent="Box"]
-transform = Transform( -2.62268e-06, -0.3, -6.55671e-07, 0, -1.31134e-08, 15, -60, 1.31134e-08, 2.86603e-14, 0, 14.157, 0 )
+transform = Transform( 2, 0, 0, 0, 15, 0, 0, 0, 60, 0, 14.157, 0 )
 cast_shadow = 2
 mesh = SubResource( 8 )
 material/0 = null
@@ -254,7 +250,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.0344, -91.8817, 3.6724 )
 kit_size = 1
 
 [node name="Target_Whole" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -69.8817, 48.7373 )
+transform = Transform( -1.09278e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278e-07, -2.4, 10, 0 )
 
 [node name="Turret" parent="." instance=ExtResource( 6 )]
 transform = Transform( 3.57628e-07, 0, 1, 0, 1, 0, -1, 0, 3.57628e-07, 20.1425, -92.827, -25 )

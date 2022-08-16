@@ -9,7 +9,7 @@ var broken_target_holder
 # NOTE: this is for the whole target, not the pieces of the target.
 var target_collision_shape
 
-const TARGET_RESPAWN_TIME = 14 # Time taken (in seconds) for the target to respawn after being destroyed.
+const TARGET_RESPAWN_TIME = 0.01 # Time taken (in seconds) for the target to respawn after being destroyed.
 var target_respawn_timer = 0
 
 export (PackedScene) var destroyed_target
@@ -19,25 +19,25 @@ func _ready():
 	target_collision_shape = $Collision_Shape
 
 
-#func _physics_process(delta):
-#	if target_respawn_timer > 0:
-#		target_respawn_timer -= delta
+func _physics_process(delta):
+	if target_respawn_timer > 0:
+		target_respawn_timer -= delta
 
-#		if target_respawn_timer <= 0:
+		if target_respawn_timer <= 0:
 
-#			for child in broken_target_holder.get_children():
-#				child.queue_free()
+			for child in broken_target_holder.get_children():
+				child.queue_free()
 
-#			target_collision_shape.disabled = false
-#			visible = true
-#			current_health = TARGET_HEALTH
+			target_collision_shape.disabled = false
+			visible = true
+			current_health = TARGET_HEALTH
 
 
 func bullet_hit(damage, bullet_transform):
 	current_health -= damage
 
-	if current_health <= 0:
-		Globals.playerScore += 10
+	if current_health <= 50:
+		Globals.playerScore += 1
 		print (Globals.playerScore)
 		var clone = destroyed_target.instance()
 		broken_target_holder.add_child(clone)
