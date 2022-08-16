@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=2]
+[gd_scene load_steps=43 format=2]
 
 [ext_resource path="res://assets/Colors.material" type="Material" id=1]
 [ext_resource path="res://assets/Emission.material" type="Material" id=2]
@@ -3892,14 +3892,6 @@ extents = Vector3( 1.5, 2, 1.5 )
 
 [sub_resource type="SphereMesh" id=23]
 
-[sub_resource type="StyleBoxFlat" id=24]
-bg_color = Color( 1, 0, 0, 0 )
-border_width_bottom = 150
-border_color = Color( 1, 0, 0, 0.392157 )
-border_blend = true
-corner_radius_bottom_right = 45
-corner_detail = 1
-
 [sub_resource type="DynamicFont" id=25]
 size = 22
 outline_size = 2
@@ -3908,6 +3900,14 @@ use_filter = true
 extra_spacing_bottom = 10
 extra_spacing_char = 2
 font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=24]
+bg_color = Color( 1, 0, 0, 0 )
+border_width_bottom = 150
+border_color = Color( 1, 0, 0, 0.392157 )
+border_blend = true
+corner_radius_bottom_right = 45
+corner_detail = 1
 
 [sub_resource type="StyleBoxFlat" id=26]
 bg_color = Color( 1, 0, 0, 0 )
@@ -3931,6 +3931,9 @@ outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 extra_spacing_char = 5
 font_data = ExtResource( 8 )
+
+[sub_resource type="StyleBoxFlat" id=29]
+bg_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
 
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 9 )
@@ -4222,7 +4225,6 @@ __meta__ = {
 }
 
 [node name="Crosshair" type="Control" parent="HUD"]
-visible = false
 modulate = Color( 1, 1, 1, 0.705882 )
 anchor_left = 0.5
 anchor_top = 0.5
@@ -4232,202 +4234,11 @@ margin_left = -21.0
 margin_top = -21.0
 margin_right = 21.0
 margin_bottom = 21.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Left_IMG5" type="TextureRect" parent="HUD/Crosshair"]
-modulate = Color( 0, 0, 0, 1 )
-self_modulate = Color( 0, 0, 0, 1 )
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 1.87659
-margin_top = 5.85486
-margin_right = 9.87659
-margin_bottom = 9.85486
-rect_rotation = 90.0
-rect_scale = Vector2( 0.996666, 0.996666 )
-texture = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Left_IMG6" type="TextureRect" parent="HUD/Crosshair"]
-modulate = Color( 0, 0, 0, 1 )
-self_modulate = Color( 0, 0, 0, 1 )
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 1.90692
-margin_top = -14.111
-margin_right = 9.90692
-margin_bottom = -10.111
-rect_rotation = 90.0
-rect_scale = Vector2( 0.996666, 0.996666 )
-texture = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Left_IMG" type="TextureRect" parent="HUD/Crosshair"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 0.834106
-margin_top = 6.87891
-margin_right = 6.83411
-margin_bottom = 8.87891
-rect_rotation = 90.0
-rect_scale = Vector2( 0.996666, 0.996666 )
-texture = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Left_IMG2" type="TextureRect" parent="HUD/Crosshair"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 0.816711
-margin_top = -13.1141
-margin_right = 6.81671
-margin_bottom = -11.1141
-rect_rotation = 90.0
-rect_scale = Vector2( 0.996666, 0.996666 )
-texture = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Left_IMG7" type="TextureRect" parent="HUD/Crosshair"]
-modulate = Color( 0, 0, 0, 1 )
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -6.0647
-margin_top = -2.09357
-margin_right = -2.0647
-margin_bottom = 5.90643
-rect_rotation = 90.0
-rect_scale = Vector2( 0.996666, 0.996666 )
-texture = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Left_IMG8" type="TextureRect" parent="HUD/Crosshair"]
-modulate = Color( 0, 0, 0, 1 )
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 13.8004
-margin_top = -2.08258
-margin_right = 17.8004
-margin_bottom = 5.91742
-rect_rotation = 90.0
-rect_scale = Vector2( 0.996666, 0.996666 )
-texture = ExtResource( 7 )
-expand = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Left_IMG10" type="TextureRect" parent="HUD/Crosshair"]
-modulate = Color( 0, 0, 0, 1 )
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 1.86594
-margin_top = -2.13916
-margin_right = 5.86594
-margin_bottom = 1.86084
-rect_rotation = 90.0
-rect_scale = Vector2( 0.996666, 0.996666 )
-texture = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Left_IMG3" type="TextureRect" parent="HUD/Crosshair"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -7.04755
-margin_top = -1.14825
-margin_right = -5.04755
-margin_bottom = 4.85175
-rect_rotation = 90.0
-rect_scale = Vector2( 0.996666, 0.996666 )
-texture = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Left_IMG4" type="TextureRect" parent="HUD/Crosshair"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 12.8487
-margin_top = -1.08228
-margin_right = 14.8487
-margin_bottom = 4.91772
-rect_rotation = 90.0
-rect_scale = Vector2( 0.996666, 0.996666 )
-texture = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Left_IMG9" type="TextureRect" parent="HUD/Crosshair"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 0.91983
-margin_top = -1.18976
-margin_right = 2.91983
-margin_bottom = 0.810242
-rect_rotation = 90.0
-rect_scale = Vector2( 0.996666, 0.996666 )
-texture = ExtResource( 7 )
-expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Crosshair2" type="Control" parent="HUD"]
-modulate = Color( 1, 1, 1, 0.705882 )
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -21.0
-margin_top = -21.0
-margin_right = 21.0
-margin_bottom = 21.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Left_IMG10" type="TextureRect" parent="HUD/Crosshair2"]
 modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
@@ -4445,7 +4256,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Left_IMG12" type="TextureRect" parent="HUD/Crosshair2"]
+[node name="Left_IMG12" type="TextureRect" parent="HUD/Crosshair"]
 modulate = Color( 0, 0, 0, 1 )
 anchor_left = 0.5
 anchor_top = 0.5
@@ -4463,7 +4274,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Left_IMG9" type="TextureRect" parent="HUD/Crosshair2"]
+[node name="Left_IMG9" type="TextureRect" parent="HUD/Crosshair"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -4480,7 +4291,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Left_IMG11" type="TextureRect" parent="HUD/Crosshair2"]
+[node name="Left_IMG11" type="TextureRect" parent="HUD/Crosshair"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -4493,75 +4304,6 @@ rect_rotation = 90.0
 rect_scale = Vector2( 0.996666, 0.996666 )
 texture = ExtResource( 7 )
 expand = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel" type="Panel" parent="HUD"]
-margin_left = -1.094
-margin_top = 620.0
-margin_right = 248.906
-margin_bottom = 720.0
-custom_styles/panel = SubResource( 24 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Gun_label" type="Label" parent="HUD/Panel"]
-margin_left = 10.0
-margin_top = 42.746
-margin_right = 380.0
-margin_bottom = 201.746
-custom_fonts/font = SubResource( 25 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Health:   100"
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel2" type="Panel" parent="HUD"]
-margin_left = 1030.0
-margin_top = 620.0
-margin_right = 1280.0
-margin_bottom = 720.0
-custom_styles/panel = SubResource( 26 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Gun_label2" type="Label" parent="HUD/Panel2"]
-margin_left = -129.455
-margin_top = 10.8628
-margin_right = 240.545
-margin_bottom = 169.863
-custom_fonts/font = SubResource( 25 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "Ammo:  000/000
-Sticky grenade:  2"
-align = 2
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Panel-Score" type="Panel" parent="HUD"]
-margin_left = -1.0
-margin_top = 532.059
-margin_right = 199.0
-margin_bottom = 592.059
-custom_styles/panel = SubResource( 27 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Score" type="Label" parent="HUD/Panel-Score"]
-margin_left = -9.95132
-margin_top = 13.628
-margin_right = 190.049
-margin_bottom = 73.628
-custom_fonts/font = SubResource( 28 )
-custom_colors/font_color = Color( 1, 1, 1, 1 )
-text = "200"
-align = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -4580,3 +4322,110 @@ text = "You died
 0.00 seconds till respawn"
 align = 1
 valign = 1
+
+[node name="UI" type="Control" parent="HUD"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="HUD/UI"]
+margin_left = -1.094
+margin_top = 620.0
+margin_right = 248.906
+margin_bottom = 720.0
+custom_styles/panel = SubResource( 24 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gun_label" type="Label" parent="HUD/UI/Panel"]
+margin_left = 10.0
+margin_top = 42.746
+margin_right = 380.0
+margin_bottom = 201.746
+custom_fonts/font = SubResource( 25 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Health:   100"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel2" type="Panel" parent="HUD/UI"]
+margin_left = 1030.0
+margin_top = 620.0
+margin_right = 1280.0
+margin_bottom = 720.0
+custom_styles/panel = SubResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Gun_label2" type="Label" parent="HUD/UI/Panel2"]
+margin_left = -129.455
+margin_top = 10.8628
+margin_right = 240.545
+margin_bottom = 169.863
+custom_fonts/font = SubResource( 25 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "Ammo:  000/000
+Sticky grenade:  2"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel-Score" type="Panel" parent="HUD/UI"]
+margin_left = -1.0
+margin_top = 532.059
+margin_right = 199.0
+margin_bottom = 592.059
+custom_styles/panel = SubResource( 27 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Score" type="Label" parent="HUD/UI/Panel-Score"]
+margin_left = -9.95132
+margin_top = 13.628
+margin_right = 190.049
+margin_bottom = 73.628
+custom_fonts/font = SubResource( 28 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+text = "200"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ShopUI" type="Control" parent="HUD/UI"]
+visible = false
+show_behind_parent = true
+margin_top = 3.02792e-05
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel3" type="Panel" parent="HUD/UI/ShopUI"]
+show_behind_parent = true
+margin_left = -1.0
+margin_top = -1.00003
+margin_right = 1279.0
+margin_bottom = 719.0
+custom_styles/panel = SubResource( 29 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel4" type="Panel" parent="HUD/UI/ShopUI"]
+show_behind_parent = true
+margin_left = 249.0
+margin_top = -1.0
+margin_right = 1030.0
+margin_bottom = 720.0
+__meta__ = {
+"_edit_use_anchors_": false
+}

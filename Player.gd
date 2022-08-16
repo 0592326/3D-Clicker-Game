@@ -94,8 +94,8 @@ func _ready():
 	current_weapon_name = "UNARMED"
 	changing_weapon_name = "UNARMED"
 
-	UI_status_label = $HUD/Panel/Gun_label
-	UI_status_label2 = $HUD/Panel2/Gun_label2
+	UI_status_label = $HUD/UI/Panel/Gun_label
+	UI_status_label2 = $HUD/UI/Panel2/Gun_label2
 	flashlight = $Rotation_Helper/Flashlight
 
 	globals = get_node("/root/Globals")
@@ -437,7 +437,7 @@ func _input(event):
 
 func process_UI(delta):
 	# Updates the player's score.
-	$"HUD/Panel-Score/Score".text = str(Globals.playerScore)
+	$"HUD/UI/Panel-Score/Score".text = str(Globals.playerScore)
 	
 	#UI Processing
 	
