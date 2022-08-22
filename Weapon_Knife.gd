@@ -1,6 +1,6 @@
 extends Spatial
 
-const DAMAGE = 40
+const DAMAGE = 50
 
 const IDLE_ANIM_NAME = "Knife_idle"
 const FIRE_ANIM_NAME = "Knife_fire"

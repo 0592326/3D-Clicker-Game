@@ -77,7 +77,7 @@ func _ready():
 	animation_manager.callback_function = funcref(self, "fire_bullet")
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
+	weapons["UNARMED"] = $Rotation_Helper/Gun_Fire_Points/Click_Point
 	weapons["KNIFE"] = $Rotation_Helper/Gun_Fire_Points/Knife_Point
 	weapons["PISTOL"] = $Rotation_Helper/Gun_Fire_Points/Pistol_Point
 	weapons["RIFLE"] = $Rotation_Helper/Gun_Fire_Points/Rifle_Point
