@@ -13,7 +13,7 @@
 [ext_resource path="res://Weapon_Pistol.gd" type="Script" id=11]
 [ext_resource path="res://Weapon_Knife.gd" type="Script" id=12]
 [ext_resource path="res://Weapon_Rifle.gd" type="Script" id=13]
-[ext_resource path="res://Weapon_Unarmed.gd" type="Script" id=14]
+[ext_resource path="res://Weapon_Click.gd" type="Script" id=14]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 1.2
@@ -4170,6 +4170,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.163315, 10.4607, 7.04431 )
 script = ExtResource( 13 )
 
 [node name="Ray_Cast" type="RayCast" parent="Rotation_Helper/Gun_Fire_Points/Rifle_Point"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0 )
 cast_to = Vector3( 0, 0, 80 )
 
 [node name="Knife_Point" type="Spatial" parent="Rotation_Helper/Gun_Fire_Points"]
@@ -4185,25 +4186,20 @@ angular_damp = 1.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.300034 )
 shape = SubResource( 22 )
 
-[node name="Click_Point" type="Spatial" parent="Rotation_Helper/Gun_Fire_Points"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.163315, 10.4607, 2.54082 )
-script = ExtResource( 14 )
-
-[node name="Area" type="Area" parent="Rotation_Helper/Gun_Fire_Points/Click_Point"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.172, 1.269 )
-input_ray_pickable = false
-angular_damp = 1.0
-
-[node name="Collision_Shape" type="CollisionShape" parent="Rotation_Helper/Gun_Fire_Points/Click_Point/Area"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.300034 )
-shape = SubResource( 22 )
-
 [node name="Pistol_Point" type="Spatial" parent="Rotation_Helper/Gun_Fire_Points"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.436506, 11.3604, 4.77607 )
 script = ExtResource( 11 )
 
 [node name="Ray_Cast2" type="RayCast" parent="Rotation_Helper/Gun_Fire_Points/Pistol_Point"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.273191, -0.8997, 2.26824 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2, -0.273191, -0.8997, 2.26824 )
+cast_to = Vector3( 0, 0, 80 )
+
+[node name="Click_Point" type="Spatial" parent="Rotation_Helper/Gun_Fire_Points"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.436506, 11.3604, 4.77607 )
+script = ExtResource( 14 )
+
+[node name="Ray_Cast3" type="RayCast" parent="Rotation_Helper/Gun_Fire_Points/Click_Point"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2, -0.273191, -0.8997, 2.26824 )
 cast_to = Vector3( 0, 0, 80 )
 
 [node name="Gun_Aim_Point" type="Spatial" parent="Rotation_Helper"]

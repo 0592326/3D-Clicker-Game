@@ -47,12 +47,12 @@ var globals
 # Weapons
 var animation_manager
 
-var current_weapon_name = "UNARMED"
-var weapons = {"UNARMED":null, "KNIFE":null, "PISTOL":null, "RIFLE":null}
-const WEAPON_NUMBER_TO_NAME = {0:"UNARMED", 1:"KNIFE", 2:"PISTOL", 3:"RIFLE"}
-const WEAPON_NAME_TO_NUMBER = {"UNARMED":0, "KNIFE":1, "PISTOL":2, "RIFLE":3}
+var current_weapon_name = "CLICK" #Not the state the player begins in
+var weapons = {"UNARMED":null, "KNIFE":null, "PISTOL":null, "RIFLE":null, "CLICK":null}
+const WEAPON_NUMBER_TO_NAME = {4:"UNARMED", 1:"KNIFE", 2:"PISTOL", 3:"RIFLE", 0:"CLICK"}
+const WEAPON_NAME_TO_NUMBER = {"UNARMED":4, "KNIFE":1, "PISTOL":2, "RIFLE":3, "CLICK":0}
 var changing_weapon = false
-var changing_weapon_name = "UNARMED"
+var changing_weapon_name = "CLICK"
 
 var health = 100
 
@@ -77,10 +77,11 @@ func _ready():
 	animation_manager.callback_function = funcref(self, "fire_bullet")
 
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	weapons["UNARMED"] = $Rotation_Helper/Gun_Fire_Points/Click_Point
+	#weapons["UNARMED"] = $Rotation_Helper/Gun_Fire_Points/Click_Point
 	weapons["KNIFE"] = $Rotation_Helper/Gun_Fire_Points/Knife_Point
 	weapons["PISTOL"] = $Rotation_Helper/Gun_Fire_Points/Pistol_Point
 	weapons["RIFLE"] = $Rotation_Helper/Gun_Fire_Points/Rifle_Point
+	weapons["CLICK"] = $Rotation_Helper/Gun_Fire_Points/Click_Point
 
 	var gun_aim_point_pos = $Rotation_Helper/Gun_Aim_Point.global_transform.origin
 
@@ -91,7 +92,7 @@ func _ready():
 			weapon_node.look_at(gun_aim_point_pos, Vector3(0, 1, 0))
 			weapon_node.rotate_object_local(Vector3(0, 1, 0), deg2rad(180))
 
-	current_weapon_name = "UNARMED"
+	current_weapon_name = "CLICK"
 	changing_weapon_name = "UNARMED"
 
 	UI_status_label = $HUD/UI/Panel/Gun_label
@@ -289,6 +290,8 @@ func process_view_input(delta):
 		weapon_change_number = 2
 	if Input.is_key_pressed(KEY_4):
 		weapon_change_number = 3
+	if Input.is_key_pressed(KEY_5):
+		weapon_change_number = 4
 
 	if Input.is_action_just_pressed("shift_weapon_positive"):
 		weapon_change_number += 1
@@ -307,18 +310,28 @@ func process_view_input(delta):
 
 # ----------------------------------
 # Firing the weapons
-	if Input.is_action_pressed("fire"):
-		if reloading_weapon == false:
-			if changing_weapon == false:
-				var current_weapon = weapons[current_weapon_name]
-				if current_weapon != null:
-					if current_weapon.ammo_in_weapon > 0:
-						if animation_manager.current_state == current_weapon.IDLE_ANIM_NAME:
-							animation_manager.set_animation(current_weapon.FIRE_ANIM_NAME)
+# ----------------------------------
+	if current_weapon_name == "CLICK":
+		if Input.is_action_just_released("fire"):
+			if reloading_weapon == false:
+				if changing_weapon == false:
+					var current_weapon = weapons[current_weapon_name]
+					if current_weapon != null:
+						if current_weapon.ammo_in_weapon > 0:
+								fire_bullet()
+						else:
+							reloading_weapon = true
+	else:
+		if Input.is_action_pressed("fire"):
+			if reloading_weapon == false:
+				if changing_weapon == false:
+					var current_weapon = weapons[current_weapon_name]
+					if current_weapon != null:
+						if current_weapon.ammo_in_weapon > 0:
+							if animation_manager.current_state == current_weapon.IDLE_ANIM_NAME:
+								animation_manager.set_animation(current_weapon.FIRE_ANIM_NAME)
 					else:
 						reloading_weapon = true
-# ----------------------------------
-
 # ----------------------------------
 # Reloading
 	if reloading_weapon == false:
