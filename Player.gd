@@ -345,8 +345,10 @@ func process_view_input(delta):
 						for weapon in weapons:
 							var weapon_node = weapons[weapon]
 							if weapon_node != null:
-								if current_anim_state == weapon_node.RELOADING_ANIM_NAME:
-									is_reloading = true
+								print (weapon)
+								if str(weapon) != "CLICK":
+									if current_anim_state == weapon_node.RELOADING_ANIM_NAME:
+										is_reloading = true
 						if is_reloading == false:
 							reloading_weapon = true
 # ----------------------------------

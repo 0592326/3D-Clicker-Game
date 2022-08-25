@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://assets/Colors.material" type="Material" id=1]
 [ext_resource path="res://assets/Emission.material" type="Material" id=2]
@@ -3945,6 +3945,12 @@ outline_size = 3
 outline_color = Color( 0, 0, 0, 1 )
 font_data = SubResource( 30 )
 
+[sub_resource type="DynamicFont" id=32]
+size = 32
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 8 )
+
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 9 )
 
@@ -4175,11 +4181,10 @@ far = 500.0
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -12.3914, 0 )
 
 [node name="Rifle_Point" type="Spatial" parent="Rotation_Helper/Gun_Fire_Points"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.163315, 10.4607, 7.04431 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 5, 0.163315, 10.4607, 7.04431 )
 script = ExtResource( 13 )
 
 [node name="Ray_Cast" type="RayCast" parent="Rotation_Helper/Gun_Fire_Points/Rifle_Point"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0 )
 cast_to = Vector3( 0, 0, 80 )
 
 [node name="Knife_Point" type="Spatial" parent="Rotation_Helper/Gun_Fire_Points"]
@@ -4196,19 +4201,19 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.300034 )
 shape = SubResource( 22 )
 
 [node name="Pistol_Point" type="Spatial" parent="Rotation_Helper/Gun_Fire_Points"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.436506, 11.3604, 4.77607 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 5, 0.436506, 11.3604, 4.77607 )
 script = ExtResource( 11 )
 
 [node name="Ray_Cast2" type="RayCast" parent="Rotation_Helper/Gun_Fire_Points/Pistol_Point"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2, -0.273191, -0.8997, 2.26824 )
-cast_to = Vector3( 0, 0, 80 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.273191, -0.8997, 2.26824 )
+cast_to = Vector3( 0, 0, 200 )
 
 [node name="Click_Point" type="Spatial" parent="Rotation_Helper/Gun_Fire_Points"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.436506, 11.3604, 4.77607 )
 script = ExtResource( 14 )
 
 [node name="Ray_Cast3" type="RayCast" parent="Rotation_Helper/Gun_Fire_Points/Click_Point"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 2, -0.273191, -0.8997, 2.26824 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.15, -0.273191, -0.8997, 2.26824 )
 cast_to = Vector3( 0, 0, 80 )
 
 [node name="Gun_Aim_Point" type="Spatial" parent="Rotation_Helper"]
@@ -4456,6 +4461,98 @@ margin_bottom = 76.0
 custom_fonts/font = SubResource( 31 )
 text = "- Shop -"
 align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HUD/UI/ShopUI/Panel4"]
+margin_left = 20.0
+margin_top = 100.0
+margin_right = 761.0
+margin_bottom = 701.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buy_Pistol" type="Button" parent="HUD/UI/ShopUI/Panel4/VBoxContainer"]
+margin_right = 741.0
+margin_bottom = 38.0
+custom_fonts/font = SubResource( 32 )
+text = "Pistol                                                                                  - 100"
+clip_text = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buy_Rifle" type="Button" parent="HUD/UI/ShopUI/Panel4/VBoxContainer"]
+margin_top = 42.0
+margin_right = 741.0
+margin_bottom = 80.0
+custom_fonts/font = SubResource( 32 )
+text = "Rifle                                                                                    - 250"
+clip_text = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buy_Grenade" type="Button" parent="HUD/UI/ShopUI/Panel4/VBoxContainer"]
+margin_top = 84.0
+margin_right = 741.0
+margin_bottom = 122.0
+custom_fonts/font = SubResource( 32 )
+text = "Grenade                                                                                -20"
+clip_text = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buy_SpeedBoost" type="Button" parent="HUD/UI/ShopUI/Panel4/VBoxContainer"]
+margin_top = 126.0
+margin_right = 741.0
+margin_bottom = 164.0
+custom_fonts/font = SubResource( 32 )
+text = "Speed Boost                                                                     - 350"
+clip_text = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buy_HealthBoost" type="Button" parent="HUD/UI/ShopUI/Panel4/VBoxContainer"]
+margin_top = 168.0
+margin_right = 741.0
+margin_bottom = 206.0
+custom_fonts/font = SubResource( 32 )
+text = "Refill Health                                                                       -100"
+clip_text = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buy_Ammunition" type="Button" parent="HUD/UI/ShopUI/Panel4/VBoxContainer"]
+margin_top = 210.0
+margin_right = 741.0
+margin_bottom = 248.0
+custom_fonts/font = SubResource( 32 )
+text = "Refill Ammo                                                                      -125"
+clip_text = true
+align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Buy_Turret" type="Button" parent="HUD/UI/ShopUI/Panel4/VBoxContainer"]
+margin_top = 252.0
+margin_right = 741.0
+margin_bottom = 290.0
+custom_fonts/font = SubResource( 32 )
+text = "Spawn Turret                                                                   - 150"
+clip_text = true
+align = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }

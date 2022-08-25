@@ -10,7 +10,6 @@ var spare_ammo = 1
 var is_weapon_enabled = false
 
 func fire_weapon():
-	print ("clicked2")
 	var ray = $Ray_Cast3
 	ray.force_raycast_update()
 
