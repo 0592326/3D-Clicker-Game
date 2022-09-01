@@ -5,7 +5,9 @@ var joypad_sensitivity = 2
 
 const MAIN_MENU_PATH = "res://Main_Menu.tscn" # Path to main menu scene.
 const POPUP_SCENE = preload("res://Pause_Popup.tscn")
+########################const POPUP_SCENE2 = preload("res://ShopUI.tscn")
 var popup = null # Variable to hold popup scene.
+########################var popup2 = null # Variable to hold ShopUI scene.
 
 var respawn_points = null
 
@@ -62,6 +64,9 @@ func set_debug_display(display_on):
 
 # warning-ignore:unused_argument
 func _process(delta):
+	pass
+##################if Input.is_action_just_pressed()
+
 	if Input.is_action_just_pressed("ui_cancel"):
 		if popup == null:
 			popup = POPUP_SCENE.instance()

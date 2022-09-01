@@ -42,7 +42,12 @@ var dead_time = 0 # Variable that tracks how long the player has been dead for.
 var is_dead = false # Variable that tracks whether or not the player is dead.
 
 var globals
-
+##############################################
+########################const POPUP_SCENE2 = preload("res://ShopUI.tscn")
+var POPUP_SCENE
+var popup = null # Variable to hold popup scene.
+var shop_open = false
+##############################################
 # ----------------------------------
 # Weapons
 var animation_manager
@@ -70,6 +75,8 @@ const GRENADE_THROW_FORCE = 75
 # ----------------------------------
 
 func _ready():
+	POPUP_SCENE = $HUD/ShopUI
+	##########################
 	camera = $Rotation_Helper/Camera
 	rotation_helper = $Rotation_Helper
 
@@ -474,8 +481,27 @@ func process_UI(delta):
 		UI_status_label2.text = "AMMO: " + str(current_weapon.ammo_in_weapon) + "/" + str(current_weapon.spare_ammo) + \
 				"\n" + current_grenade + ": " + str(grenade_amounts[current_grenade])
 
+	if Input.is_action_just_pressed("ui_shop"):
+		
+		POPUP_SCENE.visible = true
+		shop_open = true
+			#popup.get_node("Button_quit").connect("pressed", self, "popup_quit")
+#			popup.connect("popup_hide", self, "popup_closed")
+#			popup.get_node("Button_resume").connect("pressed", self, "popup_closed")
+
+#			canvas_layer.add_child(popup)
+#			popup.popup_centered()
+
+#			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
+#			get_tree().paused = true
+
+	elif shop_open == true and Input.is_action_just_pressed("ui_shop"):
+		POPUP_SCENE.visible = false
+
 	# ----------------------------------
 	# Reloading the weapon
+
 func process_reloading(delta):
 	if reloading_weapon == true:
 		var current_weapon = weapons[current_weapon_name]
