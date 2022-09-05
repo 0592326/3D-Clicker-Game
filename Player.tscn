@@ -4408,7 +4408,4 @@ __meta__ = {
 
 [node name="ShopUI" parent="HUD" instance=ExtResource( 15 )]
 visible = false
-margin_left = -1.0
-margin_top = 532.059
-margin_right = 39.0
-margin_bottom = 572.059
+margin_top = 0.0

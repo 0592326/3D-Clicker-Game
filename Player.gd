@@ -222,6 +222,8 @@ func process_input(delta):
 
 	if grabbed_object != null:
 		grabbed_object.global_transform.origin = camera.global_transform.origin + (-camera.global_transform.basis.z.normalized() * OBJECT_GRAB_DISTANCE)
+
+
 # ----------------------------------
 
 func process_view_input(delta):
@@ -428,6 +430,13 @@ func process_movement(delta):
 	vel.z = hvel.z
 	vel = move_and_slide(vel, Vector3(0, 1, 0), 0.05, 4, deg2rad(MAX_SLOPE_ANGLE))
 
+	for i in get_slide_count():
+		var collision = get_slide_collision(i)
+		if collision.collider.name == "Shopzone":
+			print ("something")
+		if collision.collider.name == "Test":
+			print ("something else")
+
 func _input(event):
 	if is_dead:
 		return
@@ -496,7 +505,7 @@ func process_UI(delta):
 
 #			get_tree().paused = true
 
-	elif shop_open == true and Input.is_action_just_pressed("ui_shop"):
+	elif shop_open == true and Input.is_action_just_pressed("ui_shop_close"):
 		POPUP_SCENE.visible = false
 
 	# ----------------------------------
