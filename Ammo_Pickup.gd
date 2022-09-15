@@ -3,7 +3,7 @@ extends Spatial
 export (int, "full size", "small") var kit_size = 0 setget kit_size_change
 
 # 0 = full size pickup, 1 = small pickup
-const AMMO_AMOUNTS = [4, 1] # Ammo CLIPS added upon pick up, not individual shots!
+const AMMO_AMOUNTS = [2, 1] # Ammo CLIPS added upon pick up, not individual shots!
 
 const RESPAWN_TIME = 20
 var respawn_timer = 0

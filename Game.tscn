@@ -491,8 +491,7 @@ material/0 = SubResource( 17 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.9954, -91.8817, -19.2633 )
 
 [node name="Ammo_Pickup" parent="Pickups" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.0344, -91.8817, 3.6724 )
-kit_size = 1
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.0344, 4.1183, 3.6724 )
 
 [node name="Target_Whole" parent="." instance=ExtResource( 5 )]
 transform = Transform( -1.09278e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278e-07, -2.4, 10, 0 )

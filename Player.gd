@@ -430,10 +430,10 @@ func process_movement(delta):
 	vel.z = hvel.z
 	vel = move_and_slide(vel, Vector3(0, 1, 0), 0.05, 4, deg2rad(MAX_SLOPE_ANGLE))
 
-	for i in get_slide_count():
-		var collision = get_slide_collision(i)
-		if collision.collider.name == "Shopzone":
-			print ("something")
+#	for i in get_slide_count():
+#		var collision = get_slide_collision(i)
+#		if collision.collider.name == "Shopzone":
+#			print ("something")
 
 
 #		if collision.collider.name == "Test":
@@ -493,10 +493,14 @@ func process_UI(delta):
 				"\n" + current_grenade + ": " + str(grenade_amounts[current_grenade])
 
 	if Input.is_action_just_pressed("ui_shop"):
+		for i in get_slide_count():
+			var collision = get_slide_collision(i)
+			if collision.collider.name == "Shopzone":
+				print ("something")
 		#if Input.is_action_just_pressed("grab_object") and current_weapon_name == "UNARMED":
 		
-		POPUP_SCENE.visible = true
-		shop_open = true
+				POPUP_SCENE.visible = true
+				shop_open = true
 #			popup.get_node("Button_quit").connect("pressed", self, "popup_quit")
 #			popup.connect("popup_hide", self, "popup_closed")
 #			popup.get_node("Button_resume").connect("pressed", self, "popup_closed")

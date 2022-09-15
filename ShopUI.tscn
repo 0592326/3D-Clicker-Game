@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/Titillium-Regular.otf" type="DynamicFontData" id=1]
+[ext_resource path="res://Shop_Buy.gd" type="Script" id=2]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+bg_color = Color( 0.0862745, 0.0862745, 0.0862745, 1 )
 
 [sub_resource type="DynamicFontData" id=2]
 font_path = "res://assets/Titillium-Regular.otf"
@@ -70,85 +71,91 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Buy_Pistol" type="Button" parent="Panel4/VBoxContainer"]
+[node name="Buy_PistolAmmo" type="Button" parent="Panel4/VBoxContainer"]
 margin_right = 741.0
 margin_bottom = 38.0
 custom_fonts/font = SubResource( 4 )
-text = "Pistol                                                                                  - 100"
+text = "Pistol ammo                                                                       - 25"
 clip_text = true
 align = 0
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+Price = 25
 
-[node name="Buy_Rifle" type="Button" parent="Panel4/VBoxContainer"]
+[node name="Buy_RifleAmmo" type="Button" parent="Panel4/VBoxContainer"]
 margin_top = 42.0
 margin_right = 741.0
 margin_bottom = 80.0
 custom_fonts/font = SubResource( 4 )
-text = "Rifle                                                                                    - 250"
+text = "Rifle ammo                                                                         - 75"
 clip_text = true
 align = 0
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+Price = 75
 
 [node name="Buy_Grenade" type="Button" parent="Panel4/VBoxContainer"]
 margin_top = 84.0
 margin_right = 741.0
 margin_bottom = 122.0
 custom_fonts/font = SubResource( 4 )
-text = "Grenade                                                                                -20"
+text = "Grenade                                                                                -10"
 clip_text = true
 align = 0
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+Price = 10
 
 [node name="Buy_SpeedBoost" type="Button" parent="Panel4/VBoxContainer"]
 margin_top = 126.0
 margin_right = 741.0
 margin_bottom = 164.0
 custom_fonts/font = SubResource( 4 )
-text = "Speed Boost                                                                     - 300"
+text = "Speed Boost                                                                     - 150"
 clip_text = true
 align = 0
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+Price = 150
 
 [node name="Buy_HealthBoost" type="Button" parent="Panel4/VBoxContainer"]
 margin_top = 168.0
 margin_right = 741.0
 margin_bottom = 206.0
 custom_fonts/font = SubResource( 4 )
-text = "Refill Health                                                                       -100"
+text = "Refill Health                                                                        - 75"
 clip_text = true
 align = 0
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+Price = 75
 
-[node name="Buy_Ammunition" type="Button" parent="Panel4/VBoxContainer"]
+[node name="Buy_Turret" type="Button" parent="Panel4/VBoxContainer"]
 margin_top = 210.0
 margin_right = 741.0
 margin_bottom = 248.0
 custom_fonts/font = SubResource( 4 )
-text = "Refill Ammo                                                                      -125"
+text = "Spawn Turret                                                                      - 50"
 clip_text = true
 align = 0
+script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-
-[node name="Buy_Turret" type="Button" parent="Panel4/VBoxContainer"]
-margin_top = 252.0
-margin_right = 741.0
-margin_bottom = 290.0
-custom_fonts/font = SubResource( 4 )
-text = "Spawn Turret                                                                   - 150"
-clip_text = true
-align = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+Price = 50
+[connection signal="pressed" from="Panel4/VBoxContainer/Buy_PistolAmmo" to="Panel4/VBoxContainer/Buy_PistolAmmo" method="_on_pressed"]
+[connection signal="pressed" from="Panel4/VBoxContainer/Buy_RifleAmmo" to="Panel4/VBoxContainer/Buy_RifleAmmo" method="_on_pressed"]
+[connection signal="pressed" from="Panel4/VBoxContainer/Buy_Grenade" to="Panel4/VBoxContainer/Buy_Grenade" method="_on_pressed"]
+[connection signal="pressed" from="Panel4/VBoxContainer/Buy_SpeedBoost" to="Panel4/VBoxContainer/Buy_SpeedBoost" method="_on_pressed"]
+[connection signal="pressed" from="Panel4/VBoxContainer/Buy_HealthBoost" to="Panel4/VBoxContainer/Buy_HealthBoost" method="_on_pressed"]
+[connection signal="pressed" from="Panel4/VBoxContainer/Buy_Turret" to="Panel4/VBoxContainer/Buy_Turret" method="_on_pressed"]
