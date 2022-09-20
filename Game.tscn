@@ -135,7 +135,7 @@ material/0 = SubResource( 2 )
 shape = SubResource( 3 )
 
 [node name="Wall_1" type="MeshInstance" parent="Box"]
-transform = Transform( 9.43724e-06, -1, -6.55671e-07, 0, -4.37114e-08, 15, -125, -7.54979e-08, -4.95018e-14, -120, 14.157, -2.75 )
+transform = Transform( 9.43724e-06, 1, 6.55671e-07, 0, -4.37114e-08, 15, 125, -7.54979e-08, -4.95018e-14, -120, 14, -8.46772 )
 cast_shadow = 2
 mesh = SubResource( 4 )
 material/0 = SubResource( 5 )
@@ -159,7 +159,7 @@ transform = Transform( 1, 0, 0, 0, 1, 8.35187e-23, 0, 8.35187e-23, 1, 0, 0, 0 )
 shape = SubResource( 6 )
 
 [node name="Wall_3" type="MeshInstance" parent="Box"]
-transform = Transform( -5.46392e-06, -1, -6.55671e-07, 0, -4.37114e-08, 15, -125, 4.37114e-08, 2.86603e-14, 120, 14.157, -8.75 )
+transform = Transform( -5.46392e-06, 1, 6.55671e-07, 0, -4.37114e-08, 15, 125, 4.37114e-08, 2.86603e-14, 120, 14, 2.61448 )
 cast_shadow = 2
 mesh = SubResource( 4 )
 material/0 = SubResource( 5 )
@@ -217,7 +217,7 @@ environment = SubResource( 12 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.2583, 0 )
 
 [node name="Box" type="RigidBody" parent="Cubes"]
-transform = Transform( 0.983477, 0, -0.181034, 0, 1, 0, 0.181034, 0, 0.983477, -6.27197, 30.8493, 33.2481 )
+transform = Transform( 0.983477, 0, -0.181034, 0, 1, 0, 0.181034, 0, 0.983477, -6.27197, -0.111758, 33.2481 )
 mass = 5.0
 gravity_scale = 3.0
 script = ExtResource( 2 )
@@ -491,10 +491,10 @@ material/0 = SubResource( 17 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -28.9954, -91.8817, -19.2633 )
 
 [node name="Ammo_Pickup" parent="Pickups" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.0344, 4.1183, 3.6724 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -65.4731, -48.1696, 3.6724 )
 
 [node name="Target_Whole" parent="." instance=ExtResource( 5 )]
-transform = Transform( -1.09278e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278e-07, -2.4, 10, 0 )
+transform = Transform( -1.09278e-07, 0, 2.5, 0, 2.5, 0, -2.5, 0, -1.09278e-07, -2.25, 8, 0 )
 
 [node name="Turret" parent="." instance=ExtResource( 6 )]
 transform = Transform( 3.57628e-07, 0, 1, 0, 1, 0, -1, 0, 3.57628e-07, 20.1425, -92.827, -25 )

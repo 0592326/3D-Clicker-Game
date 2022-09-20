@@ -471,7 +471,7 @@ func _input(event):
 func process_UI(delta):
 	# Updates the player's score.
 	$"HUD/UI/Panel-Score/Score".text = str(Globals.playerScore)
-	
+	$"HUD/UI/Panel-EnemyScore/Score".text = str(Globals.playerScore)
 	#UI Processing
 	
 	# Text that appears on the HUD.
@@ -501,6 +501,7 @@ func process_UI(delta):
 		
 				POPUP_SCENE.visible = true
 				shop_open = true
+				Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 #			popup.get_node("Button_quit").connect("pressed", self, "popup_quit")
 #			popup.connect("popup_hide", self, "popup_closed")
 #			popup.get_node("Button_resume").connect("pressed", self, "popup_closed")
@@ -514,8 +515,9 @@ func process_UI(delta):
 
 	elif shop_open == true and Input.is_action_just_pressed("ui_shop_close"):
 		POPUP_SCENE.visible = false
+		Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
-	# ----------------------------------
+	# ---------------------------------
 	# Reloading the weapon
 
 func process_reloading(delta):

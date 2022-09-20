@@ -84,7 +84,7 @@ func _process(delta):
 
 func popup_closed():
 	get_tree().paused = false
-
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	if popup != null:
 		popup.queue_free()
 		popup = null
@@ -92,11 +92,12 @@ func popup_closed():
 func popup_quit():
 	get_tree().paused = false
 
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 	if popup != null:
 		popup.queue_free()
 		popup = null
+
 
 	load_new_scene(MAIN_MENU_PATH)
 
