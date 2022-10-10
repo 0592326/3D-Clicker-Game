@@ -32,6 +32,7 @@ var debug_display = null
 
 var playerScore = 0 # This is the player's score.
 # It will start at 0 because here it is set to 0.
+var enemyScore = 0
 
 # ------------------------------------
 
@@ -82,6 +83,8 @@ func _process(delta):
 
 			get_tree().paused = true
 
+
+# Resume button
 func popup_closed():
 	get_tree().paused = false
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -89,17 +92,15 @@ func popup_closed():
 		popup.queue_free()
 		popup = null
 
+# Quit to title button
 func popup_quit():
 	get_tree().paused = false
-
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-
 	if popup != null:
 		popup.queue_free()
 		popup = null
-
-
 	load_new_scene(MAIN_MENU_PATH)
+
 
 func get_respawn_position():
 	if respawn_points == null:

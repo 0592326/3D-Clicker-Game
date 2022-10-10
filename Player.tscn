@@ -4162,7 +4162,7 @@ anims/Rifle_unequip = SubResource( 21 )
 script = ExtResource( 10 )
 
 [node name="Camera" type="Camera" parent="Rotation_Helper"]
-transform = Transform( -1, 0, 3.25841e-07, 0, 1, 0, -3.25841e-07, 0, -1, 0, 0.04, -0.065 )
+transform = Transform( -1, -9.71082e-15, 3.25841e-07, 0, 1, 2.98023e-08, -3.25841e-07, 2.98023e-08, -1, 0, 1, -0.0649996 )
 current = true
 fov = 90.0
 near = 1.0
@@ -4176,6 +4176,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 5, 0.163315, 10.4607, 7.04431 )
 script = ExtResource( 13 )
 
 [node name="Ray_Cast" type="RayCast" parent="Rotation_Helper/Gun_Fire_Points/Rifle_Point"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -1.2 )
 cast_to = Vector3( 0, 0, 80 )
 
 [node name="Knife_Point" type="Spatial" parent="Rotation_Helper/Gun_Fire_Points"]
@@ -4196,7 +4197,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 5, 0.436506, 11.3604, 4.77607 )
 script = ExtResource( 11 )
 
 [node name="Ray_Cast2" type="RayCast" parent="Rotation_Helper/Gun_Fire_Points/Pistol_Point"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.273191, -0.8997, 2.26824 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.273191, 2.1003, -0.53176 )
 cast_to = Vector3( 0, 0, 200 )
 
 [node name="Click_Point" type="Spatial" parent="Rotation_Helper/Gun_Fire_Points"]
@@ -4204,7 +4205,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.436506, 11.3604, 4.77607 )
 script = ExtResource( 14 )
 
 [node name="Ray_Cast3" type="RayCast" parent="Rotation_Helper/Gun_Fire_Points/Click_Point"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.15, -0.273191, -0.8997, 2.26824 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.225, -0.273191, -0.8997, -3.73176 )
 cast_to = Vector3( 0, 0, 80 )
 
 [node name="Gun_Aim_Point" type="Spatial" parent="Rotation_Helper"]
@@ -4424,7 +4425,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Score" type="Label" parent="HUD/UI/Panel-EnemyScore"]
+[node name="EnemyScore" type="Label" parent="HUD/UI/Panel-EnemyScore"]
 margin_left = 10.0
 margin_top = 13.628
 margin_right = 210.0

@@ -471,7 +471,7 @@ func _input(event):
 func process_UI(delta):
 	# Updates the player's score.
 	$"HUD/UI/Panel-Score/Score".text = str(Globals.playerScore)
-	$"HUD/UI/Panel-EnemyScore/Score".text = str(Globals.playerScore)
+	$"HUD/UI/Panel-EnemyScore/EnemyScore".text = str(Globals.enemyScore)
 	#UI Processing
 	
 	# Text that appears on the HUD.
