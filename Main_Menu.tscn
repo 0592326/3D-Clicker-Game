@@ -1,19 +1,16 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/Titillium-Regular.otf" type="DynamicFontData" id=2]
-[ext_resource path="res://FPS_project_icon.png" type="Texture" id=3]
-[ext_resource path="res://assets/Space_Level_Objects/SpaceThumbnail.png" type="Texture" id=4]
-[ext_resource path="res://assets/Ruin_Level_Objects/RuinsThumbnail.png" type="Texture" id=5]
 [ext_resource path="res://Main_Menu.gd" type="Script" id=6]
 
 [sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 1, 1, 1, 1 )
-draw_center = false
-border_color = Color( 0, 0, 0, 1 )
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
+bg_color = Color( 0.12549, 0.12549, 0.12549, 1 )
+border_width_left = 20
+border_width_top = 20
+border_width_right = 20
+border_width_bottom = 20
+border_color = Color( 0.262745, 0.243137, 0.607843, 1 )
+border_blend = true
 corner_detail = 20
 
 [sub_resource type="DynamicFont" id=2]
@@ -23,13 +20,27 @@ outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 2 )
 
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://assets/Titillium-Regular.otf"
+
 [sub_resource type="DynamicFont" id=3]
 size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
-font_data = ExtResource( 2 )
+font_data = SubResource( 5 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 48
+outline_size = 2
+outline_color = Color( 0, 0, 0, 1 )
+use_filter = true
+font_data = SubResource( 5 )
 
 [sub_resource type="DynamicFont" id=4]
-size = 24
+size = 32
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 2 )
 
 [node name="Main_Menu" type="Control"]
@@ -48,7 +59,7 @@ game_level_scene = "res://Game.tscn"
 
 [node name="Start_Menu" type="Panel" parent="."]
 modulate = Color( 1, 1, 1, 0.901961 )
-margin_right = 805.0
+margin_right = 1280.0
 margin_bottom = 720.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
@@ -56,16 +67,16 @@ __meta__ = {
 }
 
 [node name="Title_Label" type="Label" parent="Start_Menu"]
-margin_left = 40.0
-margin_top = 213.427
-margin_right = 390.0
-margin_bottom = 293.427
+margin_left = 32.0
+margin_top = 177.0
+margin_right = 513.0
+margin_bottom = 257.0
 rect_scale = Vector2( 1.4, 1.4 )
 custom_fonts/font = SubResource( 2 )
-custom_colors/font_color = Color( 1, 0.909804, 0, 1 )
+custom_colors/font_color = Color( 1, 0.901961, 0, 1 )
 custom_constants/shadow_offset_x = 0
 custom_constants/shadow_offset_y = 0
-text = "Game :]"
+text = "1v1 Clicker"
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
@@ -76,11 +87,12 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -360.0
-margin_top = -365.827
-margin_right = -200.0
-margin_bottom = -315.827
+margin_left = -607.385
+margin_top = -401.984
+margin_right = -287.385
+margin_bottom = -351.984
 custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_hover = Color( 0.913725, 0.862745, 0.380392, 1 )
 text = "Start game"
 flat = true
 align = 0
@@ -93,25 +105,30 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -360.0
-margin_top = -305.827
-margin_right = -75.0
-margin_bottom = -255.827
+margin_left = -607.0
+margin_top = -342.0
+margin_right = -287.0
+margin_bottom = -292.0
 custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_hover = Color( 0.913725, 0.862745, 0.380392, 1 )
 text = "Open Godot website"
 flat = true
 align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button_Options" type="Button" parent="Start_Menu"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -360.0
-margin_top = -245.827
-margin_right = -243.0
-margin_bottom = -195.827
+margin_left = -607.385
+margin_top = -281.984
+margin_right = -287.385
+margin_bottom = -231.984
 custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_hover = Color( 0.913725, 0.862745, 0.380392, 1 )
 text = "Options"
 flat = true
 align = 0
@@ -121,78 +138,70 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -360.0
-margin_top = -185.827
-margin_right = -292.0
-margin_bottom = -135.827
+margin_left = -607.0
+margin_top = -222.0
+margin_right = -287.0
+margin_bottom = -172.0
 custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_hover = Color( 0.913725, 0.862745, 0.380392, 1 )
 text = "Quit"
 flat = true
 align = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Level_Select_Menu" type="Panel" parent="."]
 visible = false
 modulate = Color( 1, 1, 1, 0.901961 )
-margin_left = 475.0
-margin_right = 805.0
+margin_right = 1280.0
 margin_bottom = 720.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="Title_Label" type="Label" parent="Level_Select_Menu"]
-margin_left = 20.0
-margin_top = 10.0
-margin_right = 227.0
-margin_bottom = 77.0
-rect_scale = Vector2( 1.4, 1.4 )
-custom_fonts/font = SubResource( 3 )
+margin_left = 503.0
+margin_top = 30.0
+margin_right = 777.0
+margin_bottom = 97.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0.886275, 0, 1 )
 custom_constants/shadow_offset_x = 3
 custom_constants/shadow_offset_y = 3
 text = "Select a level"
 align = 1
 valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button_Back" type="Button" parent="Level_Select_Menu"]
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-margin_left = -155.0
-margin_top = -70.0
-margin_right = 155.0
-margin_bottom = -20.0
+margin_left = -87.5
+margin_top = -69.9999
+margin_right = 87.5
+margin_bottom = -19.9999
 custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_hover = Color( 0.913725, 0.862745, 0.380392, 1 )
 text = "Back"
-
-[node name="Button_Level_Testing_Area" type="Button" parent="Level_Select_Menu"]
-visible = false
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = 10.0904
-margin_top = 113.0
-margin_right = 150.09
-margin_bottom = 253.0
-
-[node name="Icon" type="TextureRect" parent="Level_Select_Menu/Button_Level_Testing_Area"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -60.0
-margin_top = -60.0
-margin_right = 60.0
-margin_bottom = 60.0
-texture = ExtResource( 3 )
-expand = true
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Button_Level_Game" type="Button" parent="Level_Select_Menu"]
 anchor_left = 0.5
 anchor_right = 0.5
-margin_left = -73.9354
-margin_top = 274.884
-margin_right = 66.065
-margin_bottom = 414.884
+margin_left = -83.0
+margin_top = 324.5
+margin_right = 83.0
+margin_bottom = 395.5
 custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_hover = Color( 0.913725, 0.862745, 0.380392, 1 )
 text = "Test"
+flat = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -211,19 +220,62 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button_Level_Space" type="Button" parent="Level_Select_Menu"]
+[node name="Multiplayer_Menu" type="Panel" parent="."]
 visible = false
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -70.0
-margin_top = 275.0
-margin_right = 70.0
-margin_bottom = 415.0
+modulate = Color( 1, 1, 1, 0.901961 )
+margin_right = 1280.0
+margin_bottom = 720.0
+custom_styles/panel = SubResource( 1 )
+
+[node name="Title_Label" type="Label" parent="Multiplayer_Menu"]
+margin_left = 503.0
+margin_top = 30.0
+margin_right = 777.0
+margin_bottom = 97.0
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0.886275, 0, 1 )
+custom_constants/shadow_offset_x = 3
+custom_constants/shadow_offset_y = 3
+text = "Multiplayer"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Icon" type="TextureRect" parent="Level_Select_Menu/Button_Level_Space"]
+[node name="Button_Back" type="Button" parent="Multiplayer_Menu"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -87.5
+margin_top = -69.9999
+margin_right = 87.5
+margin_bottom = -19.9999
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color_hover = Color( 0.913725, 0.862745, 0.380392, 1 )
+text = "Back"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button_Level_Multiplayer" type="Button" parent="Multiplayer_Menu"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -83.0
+margin_top = 324.5
+margin_right = 83.0
+margin_bottom = 395.5
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color_hover = Color( 0.913725, 0.862745, 0.380392, 1 )
+text = "1v1"
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Icon" type="TextureRect" parent="Multiplayer_Menu/Button_Level_Multiplayer"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -232,42 +284,22 @@ margin_left = -60.0
 margin_top = -60.0
 margin_right = 60.0
 margin_bottom = 60.0
-texture = ExtResource( 4 )
 expand = true
-
-[node name="Button_Level_Ruins" type="Button" parent="Level_Select_Menu"]
-visible = false
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -70.0
-margin_top = 433.0
-margin_right = 70.0
-margin_bottom = 573.0
-
-[node name="Icon" type="TextureRect" parent="Level_Select_Menu/Button_Level_Ruins"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -60.0
-margin_top = -60.0
-margin_right = 60.0
-margin_bottom = 60.0
-texture = ExtResource( 5 )
-expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Options_Menu" type="Panel" parent="."]
 visible = false
 modulate = Color( 1, 1, 1, 0.901961 )
-margin_left = 475.0
-margin_right = 805.0
+margin_right = 1280.0
 margin_bottom = 720.0
 custom_styles/panel = SubResource( 1 )
 
 [node name="Title_Label" type="Label" parent="Options_Menu"]
-margin_left = 20.0
+margin_left = 497.491
 margin_top = 10.0
-margin_right = 227.0
+margin_right = 704.491
 margin_bottom = 53.0
 rect_scale = Vector2( 1.4, 1.4 )
 custom_fonts/font = SubResource( 3 )
@@ -279,8 +311,9 @@ align = 1
 valign = 1
 
 [node name="Label_Mouse_Sensitivity" type="Label" parent="Options_Menu"]
+margin_left = 477.491
 margin_top = 120.0
-margin_right = 330.0
+margin_right = 807.491
 margin_bottom = 152.0
 custom_fonts/font = SubResource( 3 )
 text = "Mouse sensitivity"
@@ -288,9 +321,9 @@ align = 1
 valign = 1
 
 [node name="HSlider_Mouse_Sensitivity" type="HSlider" parent="Options_Menu"]
-margin_left = 10.0
+margin_left = 487.491
 margin_top = 160.0
-margin_right = 320.0
+margin_right = 797.491
 margin_bottom = 176.0
 min_value = 0.001
 max_value = 0.4
@@ -298,8 +331,9 @@ step = 0.004
 value = 0.012
 
 [node name="Label_Joypad_Sensitivity" type="Label" parent="Options_Menu"]
+margin_left = 477.491
 margin_top = 190.0
-margin_right = 330.0
+margin_right = 807.491
 margin_bottom = 222.0
 custom_fonts/font = SubResource( 3 )
 text = "Joypad sensitivity"
@@ -307,9 +341,9 @@ align = 1
 valign = 1
 
 [node name="HSlider_Joypad_Sensitivity" type="HSlider" parent="Options_Menu"]
-margin_left = 10.0
+margin_left = 487.491
 margin_top = 230.0
-margin_right = 320.0
+margin_right = 797.491
 margin_bottom = 246.0
 min_value = 0.1
 max_value = 5.0
