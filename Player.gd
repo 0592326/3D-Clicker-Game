@@ -72,9 +72,13 @@ var grenade_scene = preload("res://Grenade.tscn")
 var sticky_grenade_scene = preload("res://Sticky_Grenade.tscn") # The force with which grenades are thrown.
 const GRENADE_THROW_FORCE = 75
 
+################################################################################const POPUP_SCENE2 = preload("res://Tutorial.tscn")
+################################################################################var popup2 = null
+
 # ----------------------------------
 
 func _ready():
+
 	POPUP_SCENE = $HUD/ShopUI
 	##########################
 	camera = $Rotation_Helper/Camera

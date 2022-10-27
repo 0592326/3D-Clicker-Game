@@ -4,10 +4,11 @@ var mouse_sensitivity = 0.08
 var joypad_sensitivity = 2
 
 const MAIN_MENU_PATH = "res://Main_Menu.tscn" # Path to main menu scene.
+
 const POPUP_SCENE = preload("res://Pause_Popup.tscn")
-########################const POPUP_SCENE2 = preload("res://ShopUI.tscn")
 var popup = null # Variable to hold popup scene.
-########################var popup2 = null # Variable to hold ShopUI scene.
+const POPUP_SCENE2 = preload("res://Tutorial.tscn")
+var popup2 = null
 
 var respawn_points = null
 
@@ -37,6 +38,8 @@ var enemyScore = 0
 # ------------------------------------
 
 func _ready():
+#	POPUP_SCENE2.visible == true
+
 	canvas_layer = CanvasLayer.new()
 	add_child(canvas_layer)
 
@@ -66,7 +69,8 @@ func set_debug_display(display_on):
 # warning-ignore:unused_argument
 func _process(delta):
 	pass
-##################if Input.is_action_just_pressed()
+
+################################################################################	POPUP_SCENE2.visible == true
 
 	if Input.is_action_just_pressed("ui_cancel"):
 		if popup == null:
@@ -91,6 +95,7 @@ func popup_closed():
 	if popup != null:
 		popup.queue_free()
 		popup = null
+
 
 # Quit to title button
 func popup_quit():
