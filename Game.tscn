@@ -635,7 +635,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -13.2772, -99.0232, -45.5847 )
 transform = Transform( 0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, -25.8307, -99.4025, -46.9456 )
 
 [node name="Bed" parent="Decoration Assets" instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -101.087, 15.3726 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.07996, 20.1778 )
 
 [node name="Banners" type="Spatial" parent="Decoration Assets"]
 

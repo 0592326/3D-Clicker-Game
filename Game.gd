@@ -15,6 +15,7 @@ func _instance_player(id):
 	var player_instance = player.instance()
 	player_instance.set_network_master(id)
 	player_instance.name = str(id)
+	print (player_instance.position)
 	player_instance.global_transform.origin = Vector3(0, 15, 0)
 	
 	add_child(player_instance)
