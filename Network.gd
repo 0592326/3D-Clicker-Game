@@ -46,4 +46,4 @@ func _player_connected(id):
 
 func reset_network_connection():
 	if get_tree().has_network_peer():
-		get_tree().netwrok_peer = null
+		get_tree().network_peer = null
