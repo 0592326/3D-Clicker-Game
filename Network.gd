@@ -25,7 +25,7 @@ func join_server():
 	print("Joining Server")
 	
 	client = NetworkedMultiplayerENet.new()
-	client.create_client(ip_address, MAX_CLIENTS)
+	client.create_client(ip_address, DEFAULT_PORT)
 	get_tree().set_network_peer(client)
 
 func _connected_to_server():
@@ -33,6 +33,8 @@ func _connected_to_server():
 
 func _server_disconnected():
 	print("Disconnected from the server")
+	
+	reset_network_connection()
 
 func _connection_failed():
 	print("Connection to server failed")
