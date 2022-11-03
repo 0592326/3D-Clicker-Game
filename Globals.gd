@@ -1,5 +1,8 @@
 extends Node
 
+signal instance_player(id) #####################################################
+signal toggle_network_setup(toggle) ############################################
+
 var mouse_sensitivity = 0.08
 var joypad_sensitivity = 2
 

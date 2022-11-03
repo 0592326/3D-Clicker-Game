@@ -31,7 +31,6 @@ func _ready():
 	$Options_Menu/Check_Button_VSync.connect("pressed", self, "options_menu_button_pressed", ["vsync"])
 	$Options_Menu/Check_Button_Debug.connect("pressed", self, "options_menu_button_pressed", ["debug"])
 
-
 	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 
 	var globals = get_node("/root/Globals")
